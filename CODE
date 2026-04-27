@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Enter the list (space-separated values):"
+read -a arr
+
+echo "Enter the value to remove:"
+read val
+
+new_arr=()
+
+for i in "${arr[@]}"
+do
+    if [ "$i" != "$val" ]; then
+        new_arr+=("$i")
+    fi
+done
+
+echo "Updated list: ${new_arr[@]}"
+echo "Updated list length: ${#new_arr[@]}"
